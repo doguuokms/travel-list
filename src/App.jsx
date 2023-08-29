@@ -9,7 +9,7 @@ const initialItems = [
       id: 3, description: "Charger", quantity: 1, packed: false},
     ]; 
 
-    console.log(initialItems);
+    // console.log(initialItems);
 
 
 
@@ -37,7 +37,7 @@ function Form() {
     <form className="add-form" onSubmit={(e) => handleSubmit(e)}>
     <h3>What do you need for your 😍 trip?</h3>
     <select name="" id="">
-      {Array.from({length: 20}, (_, i) => i + 1).map(num=> <option value={num} key={num}></option>)}
+      {Array.from({length: 20}, (_, i) => i + 1).map(num=> <option value={num} key={num}>{num}</option>)}
     </select>
     <input type="text" placeholder="Item..." />
     <button>Add</button>
@@ -58,12 +58,14 @@ function PackingList() {
 
 }
 
+
 function Item({item}) {
   return <li>
     <span style={item.packed ? {textDecoration:"line-through" } : {}}>{item.quantity} {item.description}</span>
     <button>❌</button>
   </li>
 }
+
 
 
 function Stats() {
